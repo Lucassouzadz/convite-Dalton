@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Chá Revelação</title>
+    <style>
+        /* Estilos CSS */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Animação do fundo piscando */
+        body.blinking-bg {
+            animation: blink-colors 1s infinite alternate;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(11, 10, 10, 0.1);
+            background-color: white;
+            max-width: 80%;
+            width: 700px;
+            box-sizing: border-box;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        /* Estilos da primeira tela */
+        #welcome-screen h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #welcome-screen p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button {
+            padding: 13px 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-blue {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .button-pink {
+            background-color:#58a0ec;
+            color: white;
+        }
+
+        .button-purple {
+            background-color: #73aeed;
+            color: white;
+        }
+
+        
+        .message-screen {
+            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .message-screen h2 {
+            font-size: 2.2em;
+            color: blue;
+            margin-bottom: 15px;
+        }
+
+        .message-screen p {
+            font-size: 1.5em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        
+        .message-screen.active {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @media (max-width: 600px) {
+            #welcome-screen h1 {
+                font-size: 2em;
+            }
+
+            .button {
+                font-size: 0.9em;
+                padding: 12px 20px;
+            }
+
+            .message-screen h2 {
+                font-size: 1.8em;
+            }
+
+            .message-screen p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-screen" class="container">
+        <h1>Um convite muito especial!</h1>
+        <p>Olá! Selecione seu grau de parentesco de<br> DALTON e/ou ALINE</p>
+        <div class="button-group">
+            <button class="button button-blue" onclick="showScreen('pai')">Pai</button>
+            <button class="button button-pink" onclick="showScreen('mae')">Mãe</button>
+            <button class="button button-purple" onclick="showScreen('vo')">Vô</button>
+            <button class="button button-blue" onclick="showScreen('voo')">Vó</button>
+            <button class="button button-pink" onclick="showScreen('irmao')">Irmão</button>
+            <button class="button button-purple" onclick="showScreen('irma')">Irmã</button>
+            <button class="button button-blue" onclick="showScreen('outro')">Outro Grau de Parentesco</button>
+        </div>
+    </div>
+
+    <div id="pai-screen" class="message-screen container">
+        <h4>Brincadeiraaaa</h4>
+        <h2>Parabéns!</h2>
+        <p>Você será vovô!</p>
+        
+    <img 
+    src="bebe.jpg" 
+       alt="Descrição da Imagem para Acessibilidade"
+        width="500"
+        height="300"
+    >    
+     
+    </div>
+
+    <div id="mae-screen" class="message-screen container">
+        <h4>Brincadeiraaaa</h4>
+        <h2>Parabéns!</h2>
+        <p>Você será vovó!</p>
+   <img 
+    src="bebe.jpg" 
+       alt="Descrição da Imagem para Acessibilidade"
+        width="500"
+        height="300"
+    >    
+    </div>
+
+    <div id="vo-screen" class="message-screen container">
+        <h4>Brincadeiraaaa</h4>
+        <h2>Parabéns!</h2>
+        <p>Você será bisavô!</p>
+    <img 
+    src="bebe.jpg" 
+       alt="Descrição da Imagem para Acessibilidade"
+        width="500"
+        height="300"
+    >    
+    </div>
+
+    <div id="voo-screen" class="message-screen container">
+        <h4>Brincadeiraaaa</h4>
+        <h2>Parabéns!</h2>
+        <p>Você será bisavó!</p>
+    <img 
+    src="bebe.jpg" 
+       alt="Descrição da Imagem para Acessibilidade"
+        width="500"
+        height="300"
+    >    
+    </div>
+
+    <div id="irmao-screen" class="message-screen container">
+       <h4>Brincadeiraaaa</h4>
+        <h2>Parabéns!</h2>
+        <p>Você será titio!</p>
+   <img 
+    src="bebe.jpg" 
+       alt="Descrição da Imagem para Acessibilidade"
+        width="500"
+        height="300"
+    >    
+    </div>
+
+    <div id="irma-screen" class="message-screen container">
+        <h4>Brincadeiraaaa</h4>
+        <h2>Parabéns!</h2>
+        <p>Você será titia!</p>
+    <img 
+    src="bebe.jpg" 
+       alt="Descrição da Imagem para Acessibilidade"
+        width="500"
+        height="300"
+    >    
+    </div>
+
+    <div id="outro-screen" class="message-screen container">
+        <h4>Brincadeiraaaa</h4>
+        <h2>Parabéns!</h2>
+        <p>Dalton & Aline serão papais</p>
+        
+    <img 
+    src="bebe.jpg" 
+       alt="Descrição da Imagem para Acessibilidade"
+        width="500"
+        height="300"
+    >    
+        </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('blinking-bg');
+        });
+
+        function showScreen(relationship) {
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const messageScreens = document.querySelectorAll('.message-screen');
+
+            welcomeScreen.style.opacity = '0';
+            welcomeScreen.style.transform = 'scale(0.95)';
+
+            
+            setTimeout(() => {
+                welcomeScreen.style.display = 'none';
+
+            
+                messageScreens.forEach(screen => {
+                    screen.classList.remove('active');
+                });
+
+                
+                const targetScreen = document.getElementById(`${relationship}-screen`);
+                if (targetScreen) {
+                    targetScreen.classList.add('active');
+                   
+                }
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
